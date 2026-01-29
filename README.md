@@ -29,48 +29,6 @@ A modern, responsive portfolio website built with Next.js, React, TypeScript, an
 - **Icons**: Material Icons Outlined
 - **Fonts**: Poppins from Google Fonts
 
-## Getting Started
-
-1. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-
-2. **Run development server**:
-   ```bash
-   npm run dev
-   ```
-
-3. **Open your browser** and navigate to `http://localhost:3000`
-
-## Build for Production
-
-```bash
-npm run build
-npm start
-```
-
-## Project Structure
-
-```
-src/
-├── app/
-│   ├── globals.css          # Global styles and Tailwind config
-│   ├── layout.tsx           # Root layout
-│   └── page.tsx             # Main page component
-├── components/
-│   ├── ui/                  # shadcn/ui components
-│   ├── Navigation.tsx       # Navigation bar
-│   ├── Hero.tsx             # Hero section
-│   ├── About.tsx            # About section
-│   ├── Skills.tsx           # Skills section
-│   ├── Education.tsx        # Education & Experience
-│   ├── Projects.tsx         # Projects showcase
-│   ├── Contact.tsx          # Contact information
-│   └── Footer.tsx           # Footer component
-└── lib/
-    └── utils.ts             # Utility functions
-```
 
 ## Customization
 
