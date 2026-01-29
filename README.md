@@ -80,13 +80,6 @@ src/
 - **Links**: Update social media and project links
 - **Contact Info**: Update contact details in the Contact component
 
-## Deployment
-
-This project can be deployed on platforms like:
-- Vercel (recommended for Next.js)
-- Netlify
-- GitHub Pages
-- Any static hosting service
 
 ## License
 
