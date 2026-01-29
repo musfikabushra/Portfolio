@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Musfika Rahman Bushra - Portfolio
+
+A modern, responsive portfolio website built with Next.js, React, TypeScript, and shadcn/ui components.
+
+## Features
+
+- **Modern Design**: Glass morphism effects with gradient backgrounds
+- **Responsive Layout**: Optimized for all device sizes
+- **Component-Based**: Modular React components for easy maintenance
+- **TypeScript**: Type-safe development
+- **shadcn/ui**: Beautiful, accessible UI components
+- **Smooth Scrolling**: Seamless navigation between sections
+
+## Sections
+
+- **Hero**: Introduction with profile image and social links
+- **About**: Personal background and interests
+- **Skills**: Technical skills organized by category
+- **Education & Experience**: Academic and professional background
+- **Projects**: Featured project showcase with interactive cards
+- **Contact**: Contact information with icons
+
+## Tech Stack
+
+- **Framework**: Next.js 16.1.1
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **UI Components**: shadcn/ui
+- **Icons**: Material Icons Outlined
+- **Fonts**: Poppins from Google Fonts
 
 ## Getting Started
 
-First, run the development server:
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+2. **Run development server**:
+   ```bash
+   npm run dev
+   ```
+
+3. **Open your browser** and navigate to `http://localhost:3000`
+
+## Build for Production
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+src/
+├── app/
+│   ├── globals.css          # Global styles and Tailwind config
+│   ├── layout.tsx           # Root layout
+│   └── page.tsx             # Main page component
+├── components/
+│   ├── ui/                  # shadcn/ui components
+│   ├── Navigation.tsx       # Navigation bar
+│   ├── Hero.tsx             # Hero section
+│   ├── About.tsx            # About section
+│   ├── Skills.tsx           # Skills section
+│   ├── Education.tsx        # Education & Experience
+│   ├── Projects.tsx         # Projects showcase
+│   ├── Contact.tsx          # Contact information
+│   └── Footer.tsx           # Footer component
+└── lib/
+    └── utils.ts             # Utility functions
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Customization
 
-## Learn More
+- **Colors**: Update the purple theme in `globals.css` and component files
+- **Content**: Modify the content in each component file
+- **Images**: Replace placeholder images with actual project screenshots
+- **Links**: Update social media and project links
+- **Contact Info**: Update contact details in the Contact component
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project can be deployed on platforms like:
+- Vercel (recommended for Next.js)
+- Netlify
+- GitHub Pages
+- Any static hosting service
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is open source and available under the MIT License.
