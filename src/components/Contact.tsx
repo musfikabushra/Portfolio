@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { motion } from 'framer-motion'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import emailjs from '@emailjs/browser'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -42,31 +43,61 @@ export default function Contact() {
     )
   }, [])
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setSubmitStatus('idle')
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault()
+  //   setIsSubmitting(true)
+  //   setSubmitStatus('idle')
 
-    try {
-      // Using mailto as a simple solution
-      const mailtoLink = `mailto:musfikarahmanbushra@gmail.com?subject=${encodeURIComponent(formData.subject || 'Contact from Portfolio')}&body=${encodeURIComponent(
-        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-      )}`
+  //   try {
+  //     // Using mailto as a simple solution
+  //     const mailtoLink = `mailto:musfikarahmanbushra@gmail.com?subject=${encodeURIComponent(formData.subject || 'Contact from Portfolio')}&body=${encodeURIComponent(
+  //       `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+  //     )}`
       
-      window.location.href = mailtoLink
+  //     window.location.href = mailtoLink
       
-      setSubmitStatus('success')
-      setFormData({ name: '', email: '', subject: '', message: '' })
+  //     setSubmitStatus('success')
+  //     setFormData({ name: '', email: '', subject: '', message: '' })
       
-      setTimeout(() => setSubmitStatus('idle'), 5000)
-    } catch (error) {
-      console.error('Error:', error)
-      setSubmitStatus('error')
-      setTimeout(() => setSubmitStatus('idle'), 5000)
-    } finally {
-      setIsSubmitting(false)
-    }
+  //     setTimeout(() => setSubmitStatus('idle'), 5000)
+  //   } catch (error) {
+  //     console.error('Error:', error)
+  //     setSubmitStatus('error')
+  //     setTimeout(() => setSubmitStatus('idle'), 5000)
+  //   } finally {
+  //     setIsSubmitting(false)
+  //   }
+  // }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault()
+  setIsSubmitting(true)
+  setSubmitStatus('idle')
+
+  try {
+    await emailjs.send(
+      'service_bnzdg2o',        // <-- ekhane tomar service id
+      'template_xcn70ad',       // template id (eta already ase)
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject || 'Portfolio Contact',
+        message: formData.message,
+      },
+      'xBAXeh3es6yBaR8qv'         // <-- ekhane tomar public key
+    )
+
+    setSubmitStatus('success')
+    setFormData({ name: '', email: '', subject: '', message: '' })
+
+  } catch (error) {
+    console.error('EmailJS Error:', error)
+    setSubmitStatus('error')
+  } finally {
+    setIsSubmitting(false)
+    setTimeout(() => setSubmitStatus('idle'), 5000)
   }
+}
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({
@@ -78,20 +109,12 @@ export default function Contact() {
   const contactInfo = [
     {
       icon: 'email',
-      text: 'musfikarahmanbushra@gmail.com',
+      text: 'musfikarahmanb@gmail.com',
       color: 'text-purple-500',
-      href: 'mailto:musfikarahmanbushra@gmail.com',
+      href: 'mailto:musfikarahmanb@gmail.com',
       bgColor: 'bg-purple-500/10',
       hoverColor: 'hover:bg-purple-500/20'
     },
-    {
-      icon: 'phone',
-      text: '+880 1737126023',
-      color: 'text-blue-500',
-      href: 'tel:+8801737126023',
-      bgColor: 'bg-blue-500/10',
-      hoverColor: 'hover:bg-blue-500/20'
-    }
   ]
 
   const containerVariants = {
@@ -198,7 +221,7 @@ export default function Contact() {
                 Response Time
               </h3>
               <p className="text-gray-400 text-xs sm:text-sm">
-                I typically respond within 24 hours. For urgent projects, feel free to call or WhatsApp!
+                I typically respond within 24 hours. Feel free to reach out anytime!
               </p>
             </CardContent>
           </Card>
