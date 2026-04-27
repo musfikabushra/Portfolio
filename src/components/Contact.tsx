@@ -298,7 +298,7 @@ export default function Contact() {
                     rows={4}
                     placeholder="Tell me about your project..."
                     required
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-3 sm:px-4 py-2 sm:py-3 text-white placeholder-gray-400 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all outline-none resize-none text-sm sm:text-base"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-3 sm:px-4 py-2 sm:py-3 text-white placeholder-gray-400 focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all outline-none resize-none text-sm sm:text-base scrollbar-thin"
                   />
                 </div>
 
